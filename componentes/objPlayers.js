@@ -123,21 +123,67 @@ export class objPlayers
 
         if(this.cenario.registry.get('Controles'))
         {
-            const JX = 100,JY = 250;
+            const JX = 100, JY = 250; // Posição do joystick
 
             let Radidao = false;
+                
+            // Criar o botão interativo
+            this.Shift = this.cenario.add.sprite(this.Width - 32, this.Height - 32, "Botao", 0)
+                .setScale(2)
+                .setOrigin(0.5, 0.5)
+                .setInteractive()
+                .setScrollFactor(0);
 
-            this.Shift = this.cenario.add.sprite(this.Width-32,this.Height-32,"Botao",0).setScale(2).setOrigin(0.5,0.5).setInteractive().setScrollFactor(0);
-
-            this.joyStick = this.cenario.plugins.get('rexvirtualjoystickplugin').add(this.cenario, 
-            {
+            // Adicionar eventos ao botão
+            this.Shift.on('pointerdown', () => {
+                console.log('Botão pressionado');
+                Radidao = true; // Estado do botão alterado ao pressionar
+            });
+        
+            this.Shift.on('pointerup', () => {
+                console.log('Botão liberado');
+                Radidao = false; // Estado do botão alterado ao soltar
+            });
+        
+            this.Shift.on('pointerout', () => {
+                console.log('Pointer saiu do botão');
+                Radidao = false; // Garante que o estado seja atualizado ao sair do botão
+            });
+        
+            // Criar o joystick virtual
+            this.joyStick = this.cenario.plugins.get('rexvirtualjoystickplugin').add(this.cenario, {
                 x: JX,
                 y: JY,
                 radius: 100,
                 enable: true
             });
+        
+            // Adicionar eventos ao joystick
+            this.joyStick.on('move', function (pointer, x, y, dragX, dragY) {
+                console.log(`Joystick movido: X=${dragX}, Y=${dragY}`);
             
-            this.joyStick.on('move', function (pointer, x, y, dragX, dragY){});
+                // Exemplo: Lógica para movimentar algo com o joystick
+                if (dragX !== 0 || dragY !== 0) {
+                    console.log('Movendo personagem com o joystick');
+                }
+            });
+        
+            // Permitir múltiplos toques (para uso simultâneo do joystick e botão)
+            this.cenario.input.addPointer(3); // Suporta até 3 toques simultâneos
+        
+            // Atualização no loop
+            this.cenario.events.on('update', () => {
+                if (Radidao) {
+                    console.log('Botão está sendo segurado');
+                }
+            
+                const forceX = this.joyStick.forceX; // Força aplicada no eixo X
+                const forceY = this.joyStick.forceY; // Força aplicada no eixo Y
+            
+                if (forceX || forceY) {
+                    console.log(`Joystick força: X=${forceX}, Y=${forceY}`);
+                }
+            });
 
             this.player.setData("Controles_atual",
             {
