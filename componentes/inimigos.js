@@ -9,7 +9,7 @@ export class Canhao
     preload() 
     {
         this.ObjBala.preload();
-        this.cenario.load.image("Canhao", "../assets/canhao.png");
+        this.cenario.load.image("Canhao", "/assets2/canhao.png");
     }
 
     group()
