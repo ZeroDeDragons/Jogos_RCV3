@@ -22,6 +22,7 @@ export class Canhao
     {
         var canhao = this.Canhao.create(X, Y, 'Canhao').setOrigin(0.5, 0.5);
         canhao.angle =R;
+        canhao.body.setAllowDrag(false);
         //canhao.setImmovable(true)
         // canhao.width =  canhao.width* this.tm;
         // canhao.height = canhao.height*this.tm;
