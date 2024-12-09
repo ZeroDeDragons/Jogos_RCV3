@@ -96,7 +96,6 @@ export class nivel_1 extends Phaser.Scene
         pontuacao.setOrigin(1,0).setScrollFactor(0);
         
         this.physics.add.collider(this.ObjPlayers.player,this.ObjPlataforma.plataformas)
-          this.physics.add.collider(this.ObjPlayers.player,this.ObjCanhao.Canhao)
         this.physics.add.collider(this.ObjPlayers.player,this.ObjPresentes.Presentes,(player,objs)=>{this.registry.set('Score',this.registry.get('Score')+1), pontuacao.setText('Score: '+this.registry.get('Score'),objs.destroy())})
         this.physics.add.collider(this.ObjPlayers.player,this.ObjArvore.Arvore,(player,objs)=>{ this.scene.pause(),setTimeout(()=>{this.scene.start("menu_Inicial")},1000)})
         this.physics.add.collider(this.ObjArvore.Arvore,this.ObjPlataforma.plataformas)
