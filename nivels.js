@@ -71,7 +71,7 @@ export class nivel_1 extends Phaser.Scene
         this.ObjPresentes.create(px-50,py-20,0);
         [px, py] = this.ObjPlataforma.create('A',px+460,py+160,3);
         [px, py] = this.ObjPlataforma.create('C',px+100,py+40);
-        this.ObjCanhao.create(px-15, py-20,0);
+        this.ObjCanhao.create(px-50, py-20,0);
         [px, py] = this.ObjPlataforma.create('C',px+100,py-40);
         this.ObjPresentes.create(px-75,py-20,0);
         [px, py] = this.ObjPlataforma.create('A',px+100,py-50,4);
