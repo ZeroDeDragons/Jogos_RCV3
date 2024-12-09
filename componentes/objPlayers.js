@@ -123,17 +123,17 @@ export class objPlayers
 
         if(this.cenario.registry.get('Controles'))
         {
-            const JX = 50,JY = 310;
+            const JX = 100,JY = 250;
 
             let Radidao = false;
 
-            this.Shift = this.cenario.add.sprite(this.Width-32,this.Height-32,"Botao",0).setScale(2).setOrigin(0.5,0.5).setInteractive();
+            this.Shift = this.cenario.add.sprite(this.Width-32,this.Height-32,"Botao",0).setScale(2).setOrigin(0.5,0.5).setInteractive().setScrollFactor(0);
 
             this.joyStick = this.cenario.plugins.get('rexvirtualjoystickplugin').add(this.cenario, 
             {
                 x: JX,
                 y: JY,
-                radius: 50,
+                radius: 100,
                 enable: true
             });
             

@@ -17,7 +17,6 @@ export class bala
 
     create(sprite, x,y,vx = null,vy = null)
     {
-        sprite = 'grandeboladeneve';
         const bala  = this.bala.create(x, y, sprite).setOrigin(0.5);
         bala.setVelocityX(vx); 
         bala.setVelocityY(vy); 
