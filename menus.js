@@ -56,16 +56,24 @@ export class Menu_Inicial extends Phaser.Scene
         ceu.displayWidth =  this.Width;
         ceu.displayHeight = this.Height;
 
-        const style = {
+        var style = {
             font: '40px Arial',
             fill: '#ffffff', // Cor do texto
             align: 'center', // Alinhamento do texto
             stroke: '#000000', // Cor do contorno
             strokeThickness: 3 // Espessura do contorno
         };
-        const pontuacao = this.add.text(this.Width/2, this.Height*0.25, 'Score: '+this.registry.get('Score')+'/4', style);
+        var pontuacao = this.add.text(this.Width/2, this.Height*0.15, 'Score: '+this.registry.get('Score')+'/4', style);
         pontuacao.setOrigin(0.5).setScrollFactor(0);
-
+        var style = {
+            font: '20px Arial',
+            fill: '#ffffff', // Cor do texto
+            align: 'center', // Alinhamento do texto
+            stroke: '#000000', // Cor do contorno
+            strokeThickness: 3 // Espessura do contorno
+        };
+        pontuacao = this.add.text(this.Width/2, this.Height*0.35, 'Jogo de Natal RC TGPSI-tecnimo de gestao de sistemas informaticos', style);
+        pontuacao.setOrigin(0.5).setScrollFactor(0);
         this.Tipo_1 = this.add.sprite(this.Width/2,this.Height/2,"Botao",0).setScale(2).setOrigin(0.5,0.5).setInteractive();
         this.Tipo_1.on("pointerover",()=>{this.Tipo_1.setFrame(1)});
         this.Tipo_1.on("pointerout",()=> {this.Tipo_1.setFrame(0)});
