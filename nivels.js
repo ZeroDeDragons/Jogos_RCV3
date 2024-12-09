@@ -92,8 +92,8 @@ export class nivel_1 extends Phaser.Scene
             strokeThickness: 3 // Espessura do contorno
         };
   
-        const pontuacao = this.add.text(this.Width, this.Height, 'Score: '+this.registry.get('Score'), style);
-        pontuacao.setOrigin(1).setScrollFactor(0);
+        const pontuacao = this.add.text(this.Width, 0, 'Score: '+this.registry.get('Score'), style);
+        pontuacao.setOrigin(1,0).setScrollFactor(0);
         
         this.physics.add.collider(this.ObjPlayers.player,this.ObjPlataforma.plataformas)
         this.physics.add.collider(this.ObjPlayers.player,this.ObjPresentes.Presentes,(player,objs)=>{this.registry.set('Score',this.registry.get('Score')+1), pontuacao.setText('Score: '+this.registry.get('Score'),objs.destroy())})
