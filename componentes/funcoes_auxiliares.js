@@ -7,7 +7,7 @@ export class bala
 
     preload()
     {
-        this.cenario.load.image("grandeboladeneve", "/assets/grandeboladeneve.png");
+        this.cenario.load.image("grandeboladeneve", "assets/grandeboladeneve.png");
     }
 
     group()
