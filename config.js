@@ -9,8 +9,8 @@ const config = {
         debug: true
     },
     pixelArt:true,
-    width:  640,
-    height: 360, 
+    width:  window.innerWidth,
+    height: window.innerHeight, 
     backgroundColor: '#000',
     scene: [Menu_Teclado, Menu_Inicial, Menu_Morte,nivel_1],
     scale: 
