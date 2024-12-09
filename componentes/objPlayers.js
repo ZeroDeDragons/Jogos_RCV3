@@ -111,7 +111,7 @@ export class objPlayers
         this.cenario.load.spritesheet("correndo",      "assets/correr.png", { frameWidth: 32, frameHeight: 32 });
         this.cenario.load.spritesheet("pulando",       "assets/pular.png", { frameWidth: 32, frameHeight: 32 });
         this.cenario.load.spritesheet("dano",       "assets/hit_sheet.png", { frameWidth: 32, frameHeight: 32 });
-        this.cenario.load.spritesheet("Botao",       "assets/shift_botao.png", { frameWidth: 32, frameHeight: 32 });
+        this.cenario.load.spritesheet("Boao",       "assets/shift_botao.png", { frameWidth: 32, frameHeight: 32 });
         this.cenario.physics.world.setBoundsCollision(true, true, true, false);
         this.cenario.load.plugin('rexvirtualjoystickplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js', true);
     }
@@ -128,7 +128,7 @@ export class objPlayers
             let Radidao = false;
                 
             // Criar o botão interativo
-            this.Shift = this.cenario.add.sprite(this.Width - 32, this.Height - 32, "Botao", 0)
+            this.Shift = this.cenario.add.sprite(this.Width - 32, this.Height - 32, "Boao", 0)
                 .setScale(2)
                 .setOrigin(0.5, 0.5)
                 .setInteractive()
